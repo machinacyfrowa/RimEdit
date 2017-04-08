@@ -12,9 +12,9 @@ using System.Xml.Linq;
 
 namespace RimEdit {
     public partial class Form1 : Form {
-        XElement xmlSave;
-        Pawn p;
-        IEnumerable<XElement> pawnList;
+        public XElement xmlSave;
+        private string fileName;
+        private List<Pawn> pawnList = new List<Pawn>();
 
         public Form1() {
             InitializeComponent();
@@ -29,24 +29,27 @@ namespace RimEdit {
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+                fileName = openFileDialog1.FileName;
                 try {
                     if ((myStream = openFileDialog1.OpenFile()) != null) {
                         using (myStream) {
                             xmlSave = XElement.Load(myStream);
                             //szukaj postaci w sejwie
-                            pawnList =
+                            IEnumerable<XElement> pawns =
                                 from el in xmlSave.Descendants("thing")
                                 where (string)el.Attribute("Class") == "Pawn" && (string)el.Element("kindDef").Value == "Colonist"
                                 select el;
+                            foreach (XElement pawnXml in pawns)
+                                pawnList.Add(new Pawn(pawnXml));
+                            Text = "RimEdit " + fileName;
                         }
+                        myStream.Close();
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
                 richTextBox1.Text = "znalazłem " + pawnList.Count() + "postaci";
-                foreach (XElement el in pawnList)
-                    p = new Pawn(el);
-                loadPawnIntoFields(p);
+                loadPawnIntoFields(pawnList.First());
             }
         }
         private void loadPawnIntoFields(Pawn p) {
@@ -54,56 +57,15 @@ namespace RimEdit {
             pawnFaction.Text = p.Faction;
             pawnGender.Text = p.Gender;
             fullName.Text = p.FullName;
-            //if (p.skillList["Shooting"] >= 0) {
-            //    shootingUpDown.Value = p.skillList["Shooting"];
-            //    shootingUpDown.Enabled = true;
-            //} else {
-            //    shootingUpDown.Value = 0;
-            //    shootingUpDown.Enabled = false;
-            //}
-            //if (p.skillList["Melee"] >= 0) {
-            //    meleeUpDown.Value = p.skillList["Melee"];
-            //    meleeUpDown.Enabled = true;
-            //} else {
-            //    meleeUpDown.Value = 0;
-            //    meleeUpDown.Enabled = false;
-            //}
-            //if (p.skillList["Social"] >= 0) {
-            //    socialUpDown.Value = p.skillList["Social"];
-            //    socialUpDown.Enabled = true;
-            //} else {
-            //    socialUpDown.Value = 0;
-            //    socialUpDown.Enabled = false;
-            //}
-            //if(p.skillList["Animals"] >= 0) {
-            //    animalUpDown.Value = p.skillList["Animals"];
-            //    animalUpDown.Enabled = true;
-            //} else {
-            //    animalUpDown.Value = 0;
-            //    animalUpDown.Enabled = false;
-            //}
-            //if (p.skillList["Medicine"] >= 0) {
-            //    medicineUpDown.Value = p.skillList["Medicine"];
-            //    medicineUpDown.Enabled = true;
-            //} else {
-            //    medicineUpDown.Value = 0;
-            //    medicineUpDown.Enabled = false;
-            //}
-            //if (p.skillList["Cooking"] >= 0) {
-            //    cookingUpDown.Value = p.skillList["Cooking"];
-            //    cookingUpDown.Enabled = true;
-            //} else {
-            //    cookingUpDown.Value = 0;
-            //    cookingUpDown.Enabled = false;
-            //}
+            p.setSkill(0, 20);
         }
 
         private void pawnToLogToolStripMenuItem_Click(object sender, EventArgs e) {
-            richTextBox1.Text = p.getXML();
+            richTextBox1.Text = pawnList.First().getXML();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
-            //p.setSkillLevel("Shooting", 20);
+            xmlSave.Save(fileName);
         }
     }
 }
