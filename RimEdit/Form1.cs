@@ -54,27 +54,56 @@ namespace RimEdit {
             pawnFaction.Text = p.Faction;
             pawnGender.Text = p.Gender;
             fullName.Text = p.FullName;
-            if (p.skillList["Shooting"] >= 0) {
-                shootingUpDown.Value = p.skillList["Shooting"];
-                shootingUpDown.ReadOnly = false;
-            } else {
-                shootingUpDown.Value = 0;
-                shootingUpDown.ReadOnly = true;
-            }
-            if (p.skillList["Melee"] >= 0) {
-                meleeUpDown.Value = p.skillList["Melee"];
-                meleeUpDown.ReadOnly = false;
-            } else {
-                meleeUpDown.Value = 0;
-                meleeUpDown.ReadOnly = true;
-            }
-            if (p.skillList["Social"] >= 0) {
-                socialUpDown.Value = p.skillList["Social"];
-                socialUpDown.ReadOnly = false;
-            } else {
-                socialUpDown.Value = 0;
-                socialUpDown.ReadOnly = true;
-            }
+            //if (p.skillList["Shooting"] >= 0) {
+            //    shootingUpDown.Value = p.skillList["Shooting"];
+            //    shootingUpDown.Enabled = true;
+            //} else {
+            //    shootingUpDown.Value = 0;
+            //    shootingUpDown.Enabled = false;
+            //}
+            //if (p.skillList["Melee"] >= 0) {
+            //    meleeUpDown.Value = p.skillList["Melee"];
+            //    meleeUpDown.Enabled = true;
+            //} else {
+            //    meleeUpDown.Value = 0;
+            //    meleeUpDown.Enabled = false;
+            //}
+            //if (p.skillList["Social"] >= 0) {
+            //    socialUpDown.Value = p.skillList["Social"];
+            //    socialUpDown.Enabled = true;
+            //} else {
+            //    socialUpDown.Value = 0;
+            //    socialUpDown.Enabled = false;
+            //}
+            //if(p.skillList["Animals"] >= 0) {
+            //    animalUpDown.Value = p.skillList["Animals"];
+            //    animalUpDown.Enabled = true;
+            //} else {
+            //    animalUpDown.Value = 0;
+            //    animalUpDown.Enabled = false;
+            //}
+            //if (p.skillList["Medicine"] >= 0) {
+            //    medicineUpDown.Value = p.skillList["Medicine"];
+            //    medicineUpDown.Enabled = true;
+            //} else {
+            //    medicineUpDown.Value = 0;
+            //    medicineUpDown.Enabled = false;
+            //}
+            //if (p.skillList["Cooking"] >= 0) {
+            //    cookingUpDown.Value = p.skillList["Cooking"];
+            //    cookingUpDown.Enabled = true;
+            //} else {
+            //    cookingUpDown.Value = 0;
+            //    cookingUpDown.Enabled = false;
+            //}
+        }
+
+        private void pawnToLogToolStripMenuItem_Click(object sender, EventArgs e) {
+            richTextBox1.Text = p.getXML();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
+            //p.setSkillLevel("Shooting", 20);
         }
     }
 }
