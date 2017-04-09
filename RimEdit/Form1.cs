@@ -15,6 +15,7 @@ namespace RimEdit {
         public XElement xmlSave;
         private string fileName;
         private List<Pawn> pawnList = new List<Pawn>();
+        private int activePawnIndex = 0;
 
         public Form1() {
             InitializeComponent();
@@ -57,9 +58,41 @@ namespace RimEdit {
             pawnFaction.Text = p.Faction;
             pawnGender.Text = p.Gender;
             fullName.Text = p.FullName;
-            p.setSkill(0, 20);
-        }
+            //skills
+            int row = 0;
+            skillsLayoutPanel.RowCount = 0;
+            skillsLayoutPanel.ColumnCount = 5;
+            foreach(Skill s in p.skillList) {
+                skillsLayoutPanel.Controls.Add(new Label() { Text = s.Def, Anchor = AnchorStyles.Left, AutoSize = true }, 0, row);
+                skillsLayoutPanel.Controls.Add(new NumericUpDown() { Name = s.Def + "UpDown", Value = s.Level}, 1, row);
+                string[] passion = { "", "Minor", "Major" };
+                skillsLayoutPanel.Controls.Add(new ComboBox() { Name = s.Def + "ComboBox", DataSource = passion }, 2, row);
+                Button revertButton = new Button() { Name = s.Def + "RevertButton", Text = "Przywróć" };
+                skillsLayoutPanel.Controls.Add(revertButton, 3, row);
 
+                Button saveButton = new Button() { Name = s.Def + "SaveButton", Text = "Zapisz" };
+                saveButton.Click += new EventHandler(skillSaveButtonClick);
+                skillsLayoutPanel.Controls.Add(saveButton, 4, row);
+                row++;
+            }
+            //gear
+
+            
+        }
+        private void skillSaveButtonClick(object sender, EventArgs e) {
+            Button btn = (Button)sender;
+            string name = btn.Name.Remove(btn.Name.Length - 10)+"UpDown";
+            NumericUpDown upDown = (NumericUpDown)skillsLayoutPanel.Controls.Find(name,true).FirstOrDefault();
+            int row = skillsLayoutPanel.GetRow(btn);
+            pawnList[activePawnIndex].skillList[row].Level = (int)upDown.Value;
+        }
+        private void skillRevertButton(object sender, EventArgs e) {
+            Button btn = (Button)sender;
+            string name = btn.Name.Remove(btn.Name.Length - 12) + "UpDown";
+            NumericUpDown upDown = (NumericUpDown)skillsLayoutPanel.Controls.Find(name, true).FirstOrDefault();
+            int row = skillsLayoutPanel.GetRow(btn);
+            upDown.Value = pawnList[activePawnIndex].skillList[row].Level;
+        }
         private void pawnToLogToolStripMenuItem_Click(object sender, EventArgs e) {
             richTextBox1.Text = pawnList.First().getXML();
         }

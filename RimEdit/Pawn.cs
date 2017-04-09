@@ -59,7 +59,7 @@ namespace RimEdit {
         public string FullName {
             get { return FirstName + " \"" + NickName + "\" " + LastName; }
         }
-        private List<Skill> skillList = new List<Skill>();
+        public List<Skill> skillList = new List<Skill>();
         private List<Apparel> apparelList = new List<Apparel>();
 
         

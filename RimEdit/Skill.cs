@@ -18,10 +18,16 @@ namespace RimEdit {
         }
         public int Level {
             set {
-                xml.Element("level").Value = value.ToString();
+                if(value > 0)
+                    xml.Element("level").Value = value.ToString();
             }
             get {
-                return Int32.Parse(xml.Element("level").Value);
+                try {
+                    return Int32.Parse(xml.Element("level").Value);
+                } catch (Exception) {
+                    return 0;
+                }
+                
             }
         }
         public float XpSinceLastLevel {

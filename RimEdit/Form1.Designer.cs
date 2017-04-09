@@ -39,43 +39,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.researchUpDown = new System.Windows.Forms.NumericUpDown();
-            this.craftingUpDown = new System.Windows.Forms.NumericUpDown();
-            this.artisticUpDown = new System.Windows.Forms.NumericUpDown();
-            this.miningUpDown = new System.Windows.Forms.NumericUpDown();
-            this.growingUpDown = new System.Windows.Forms.NumericUpDown();
-            this.constructionUpDown = new System.Windows.Forms.NumericUpDown();
-            this.cookingUpDown = new System.Windows.Forms.NumericUpDown();
-            this.medicineUpDown = new System.Windows.Forms.NumericUpDown();
-            this.animalUpDown = new System.Windows.Forms.NumericUpDown();
-            this.socialUpDown = new System.Windows.Forms.NumericUpDown();
-            this.meleeUpDown = new System.Windows.Forms.NumericUpDown();
-            this.shootingUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.fullName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.skillsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.researchUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.craftingUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artisticUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miningUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.growingUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.constructionUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookingUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicineUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.animalUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socialUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.meleeUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shootingUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -169,6 +142,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -212,23 +186,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.researchUpDown);
-            this.tabPage2.Controls.Add(this.craftingUpDown);
-            this.tabPage2.Controls.Add(this.artisticUpDown);
-            this.tabPage2.Controls.Add(this.miningUpDown);
-            this.tabPage2.Controls.Add(this.growingUpDown);
-            this.tabPage2.Controls.Add(this.constructionUpDown);
-            this.tabPage2.Controls.Add(this.cookingUpDown);
-            this.tabPage2.Controls.Add(this.medicineUpDown);
-            this.tabPage2.Controls.Add(this.animalUpDown);
-            this.tabPage2.Controls.Add(this.socialUpDown);
-            this.tabPage2.Controls.Add(this.meleeUpDown);
-            this.tabPage2.Controls.Add(this.shootingUpDown);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.skillsLayoutPanel);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -236,135 +194,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Skills";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(479, 114);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Medicine";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(491, 88);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Animal";
-            // 
-            // researchUpDown
-            // 
-            this.researchUpDown.Location = new System.Drawing.Point(535, 294);
-            this.researchUpDown.Name = "researchUpDown";
-            this.researchUpDown.Size = new System.Drawing.Size(40, 20);
-            this.researchUpDown.TabIndex = 18;
-            // 
-            // craftingUpDown
-            // 
-            this.craftingUpDown.Location = new System.Drawing.Point(535, 268);
-            this.craftingUpDown.Name = "craftingUpDown";
-            this.craftingUpDown.Size = new System.Drawing.Size(40, 20);
-            this.craftingUpDown.TabIndex = 17;
-            // 
-            // artisticUpDown
-            // 
-            this.artisticUpDown.Location = new System.Drawing.Point(535, 242);
-            this.artisticUpDown.Name = "artisticUpDown";
-            this.artisticUpDown.Size = new System.Drawing.Size(40, 20);
-            this.artisticUpDown.TabIndex = 16;
-            // 
-            // miningUpDown
-            // 
-            this.miningUpDown.Location = new System.Drawing.Point(535, 216);
-            this.miningUpDown.Name = "miningUpDown";
-            this.miningUpDown.Size = new System.Drawing.Size(40, 20);
-            this.miningUpDown.TabIndex = 15;
-            // 
-            // growingUpDown
-            // 
-            this.growingUpDown.Location = new System.Drawing.Point(535, 190);
-            this.growingUpDown.Name = "growingUpDown";
-            this.growingUpDown.Size = new System.Drawing.Size(40, 20);
-            this.growingUpDown.TabIndex = 14;
-            // 
-            // constructionUpDown
-            // 
-            this.constructionUpDown.Location = new System.Drawing.Point(535, 164);
-            this.constructionUpDown.Name = "constructionUpDown";
-            this.constructionUpDown.Size = new System.Drawing.Size(40, 20);
-            this.constructionUpDown.TabIndex = 13;
-            // 
-            // cookingUpDown
-            // 
-            this.cookingUpDown.Location = new System.Drawing.Point(535, 138);
-            this.cookingUpDown.Name = "cookingUpDown";
-            this.cookingUpDown.Size = new System.Drawing.Size(40, 20);
-            this.cookingUpDown.TabIndex = 12;
-            // 
-            // medicineUpDown
-            // 
-            this.medicineUpDown.Location = new System.Drawing.Point(535, 112);
-            this.medicineUpDown.Name = "medicineUpDown";
-            this.medicineUpDown.Size = new System.Drawing.Size(40, 20);
-            this.medicineUpDown.TabIndex = 11;
-            // 
-            // animalUpDown
-            // 
-            this.animalUpDown.Location = new System.Drawing.Point(535, 86);
-            this.animalUpDown.Name = "animalUpDown";
-            this.animalUpDown.Size = new System.Drawing.Size(40, 20);
-            this.animalUpDown.TabIndex = 10;
-            // 
-            // socialUpDown
-            // 
-            this.socialUpDown.Location = new System.Drawing.Point(535, 60);
-            this.socialUpDown.Name = "socialUpDown";
-            this.socialUpDown.Size = new System.Drawing.Size(40, 20);
-            this.socialUpDown.TabIndex = 9;
-            // 
-            // meleeUpDown
-            // 
-            this.meleeUpDown.Location = new System.Drawing.Point(535, 34);
-            this.meleeUpDown.Name = "meleeUpDown";
-            this.meleeUpDown.Size = new System.Drawing.Size(40, 20);
-            this.meleeUpDown.TabIndex = 8;
-            // 
-            // shootingUpDown
-            // 
-            this.shootingUpDown.Location = new System.Drawing.Point(535, 8);
-            this.shootingUpDown.Name = "shootingUpDown";
-            this.shootingUpDown.Size = new System.Drawing.Size(40, 20);
-            this.shootingUpDown.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(493, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Social";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(493, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Melee";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(480, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Shooting";
             // 
             // tabPage3
             // 
@@ -404,6 +233,30 @@
             this.button2.Text = "Next >";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // skillsLayoutPanel
+            // 
+            this.skillsLayoutPanel.ColumnCount = 4;
+            this.skillsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.skillsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.skillsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.skillsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.skillsLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.skillsLayoutPanel.Name = "skillsLayoutPanel";
+            this.skillsLayoutPanel.RowCount = 2;
+            this.skillsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.skillsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.skillsLayoutPanel.Size = new System.Drawing.Size(989, 356);
+            this.skillsLayoutPanel.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(433, 161);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.Text = "test";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,19 +277,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.researchUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.craftingUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artisticUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miningUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.growingUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.constructionUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookingUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicineUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.animalUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socialUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.meleeUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shootingUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,28 +299,13 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label fullName;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown socialUpDown;
-        private System.Windows.Forms.NumericUpDown meleeUpDown;
-        private System.Windows.Forms.NumericUpDown shootingUpDown;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown animalUpDown;
-        private System.Windows.Forms.NumericUpDown researchUpDown;
-        private System.Windows.Forms.NumericUpDown craftingUpDown;
-        private System.Windows.Forms.NumericUpDown artisticUpDown;
-        private System.Windows.Forms.NumericUpDown miningUpDown;
-        private System.Windows.Forms.NumericUpDown growingUpDown;
-        private System.Windows.Forms.NumericUpDown constructionUpDown;
-        private System.Windows.Forms.NumericUpDown cookingUpDown;
-        private System.Windows.Forms.NumericUpDown medicineUpDown;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pawnToLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel skillsLayoutPanel;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
